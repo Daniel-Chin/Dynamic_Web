@@ -1,4 +1,4 @@
-[
+const articles = [
   {
     "id": "article-one",
     "title": "Article One: First Fake Article",
@@ -199,4 +199,6 @@
     },
     "publishedDate": "Wed Aug 22 2019 17:04:38 GMT-0400"
   }
-]
+];
+
+export default articles;
