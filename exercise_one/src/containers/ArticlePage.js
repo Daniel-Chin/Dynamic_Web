@@ -3,8 +3,15 @@ import './ArticlePage.css';
 import formatTime from '../helpers/formatTime';
 
 const ArticlePage = (props) => {
-  const { title, blurb, articleText, image, publishedDate } = props
-    .ARTICLES[props.i];
+  const article = props.ARTICLES[props.i];
+  if (article === undefined) {
+    return (
+      <span>
+        404 nOT fOUND
+      </span>
+    );
+  }
+  const { title, blurb, articleText, image, publishedDate } = article;
   console.log(`Don't know how to display`, image);
   return (<>
     <div className='head'>
