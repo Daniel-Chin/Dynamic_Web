@@ -1,20 +1,24 @@
+.waterfall {
+    max-width: 60%;
+}
+
 .head {
-    position: relative;
-    height: 30vh;
+    background-color: #ccc;
 }
 
 .head > img {
+    position: absolute;
+    top: 0;
     max-height: 100%;
 }
 
-.face {
-    position: absolute;
-    top: 0;
+.head > .waterfall {
 }
 
 h1 {
     font-size: 7vh;
     font-weight: bold;
+    margin-top: 0;
     margin-bottom: -3vh;
 }
 

@@ -1,6 +1,5 @@
 import React from 'react';
 import './ArticlePage.css';
-import '../App.css';
 import formatTime from '../helpers/formatTime';
 
 const ArticlePage = (props) => {
@@ -8,13 +7,11 @@ const ArticlePage = (props) => {
     .ARTICLES[props.i];
   return (<>
     <div className='head'>
-      <img src={image.url} alt={image.alt} />
-      <div className='face'>
-        <div className='waterfall'>
-          <h1>{title}</h1>
-          <span className='time'>{formatTime(publishedDate)}</span> <br />
-          <p className='blurb'>{blurb}</p>
-        </div>
+    {/*<img src={image.url} alt={image.alt} />*/}
+      <div className='waterfall'>
+        <h1>{title}</h1>
+        <span className='time'>{formatTime(publishedDate)}</span> <br />
+        <p className='blurb'>{blurb}</p>
       </div>
     </div>
     <div className='waterfall'>
