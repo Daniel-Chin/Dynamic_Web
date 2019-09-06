@@ -1,0 +1,1 @@
+URL hash section (http://www.a.com/index.html#sec2), how to use them in html? 

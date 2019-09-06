@@ -1,0 +1,27 @@
+.head {
+    position: relative;
+    height: 30vh;
+}
+
+.head > img {
+    max-height: 100%;
+}
+
+.face {
+    position: absolute;
+    top: 0;
+}
+
+h1 {
+    font-size: 7vh;
+    font-weight: bold;
+    margin-bottom: -3vh;
+}
+
+.time {
+    font-size: 3vh;
+}
+
+.blurb {
+    font-size: 4vh;
+}

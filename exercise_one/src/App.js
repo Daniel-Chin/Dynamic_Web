@@ -1,24 +1,21 @@
 import React from 'react';
 import './App.css';
+import { Switch, Route } from 'react-router-dom';
+import Home from './containers/Home';
+import ArticlePage from './containers/ArticlePage';
+import ARTICLES from './data/articles';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Switch>
+      <Route exact path='/' 
+        render={() => <Home ARTICLES={ARTICLES} />} 
+      />
+      <Route path='/:article_i' 
+        render={(props) => <ArticlePage ARTICLES={ARTICLES} i={parseInt(props.match.params.article_i)} />} 
+      />
+      <Route render={()=>(<p>404 nOT fOUND</p>)} />
+    </Switch>
   );
 }
 

@@ -1,13 +1,8 @@
-.App {
-  text-align: center;
-}
-
-a {
-  color: #61dafb;
-  text-decoration: underline;
+h1 {
+    font-weight: normal;
 }
 
 .waterfall {
-  margin: 0 auto;
-  max-width: 80%;
+    margin: 0 auto;
+    max-width: 80%;
 }

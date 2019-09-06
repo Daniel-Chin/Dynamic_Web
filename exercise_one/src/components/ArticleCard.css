@@ -1,0 +1,22 @@
+.card {
+    display: table;
+    width: 100%;
+}
+
+.card-left {
+    display: table-cell;
+    width: 20%;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.card-right {
+    display: table-cell;
+    width: 80%;
+}
+
+.card-right > span {
+}
