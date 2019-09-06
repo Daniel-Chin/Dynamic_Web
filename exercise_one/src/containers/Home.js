@@ -4,7 +4,7 @@ import ArticleCard from '../components/ArticleCard';
 const Home = (props) => (
   <div className='waterfall-80'>
     <h1>Articles</h1>
-    {props.ARTICLES.map((x, i) => <ArticleCard article={x} i={i}/>)}
+    {props.ARTICLES.map((x, i) => <ArticleCard key={i} article={x} i={i}/>)}
   </div>
 );
 

@@ -5,18 +5,22 @@ import formatTime from '../helpers/formatTime';
 
 const ArticleCard = (props) => (
   <div className='card'>
-    <div className='card-left'>
-      <span className='align-helper' />
-      <img 
-        src={props.article.image.url} 
-        alt={props.article.image.alt} 
-      />
-    </div>
-    <div className='card-right'>
-      <span>{props.article.title}</span> <br/>
-      <span>{formatTime(props.article.publishedDate)}</span> <br/>
-      <p>{props.article.blurb}</p>
-      <Link to={`/` + props.i}>Read More</Link>
+    <div className='card-padded'>
+      <div className='card-left'>
+        <span className='align-helper' />
+        <img 
+          src={props.article.image.url} 
+          alt={props.article.image.alt} 
+        />
+      </div>
+      <div className='card-right'>
+        <div className='card-right-padding'>
+          <span className='card-title'>{props.article.title}</span> <br/>
+          <span className='card-time'>{formatTime(props.article.publishedDate)}</span> <br/>
+          <p className='card-blurb'>{props.article.blurb}</p>
+          <Link className='card-link' to={`/` + props.i}>Read More</Link>
+        </div>
+      </div>
     </div>
   </div>
 );

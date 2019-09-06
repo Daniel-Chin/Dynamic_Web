@@ -1,5 +1,6 @@
 .waterfall-60 {
     max-width: 60%;
+    margin: 0 auto;
 }
 
 .head {
@@ -13,24 +14,21 @@
     max-height: 100%;
 }
 
-.head > .waterfall {
-}
-
 .article-page-h1 {
     font-size: 7vh;
     font-weight: bold;
     margin-top: 0;
-    margin-bottom: -3vh;
+    margin-bottom: -1vh;
 }
 
 .time {
-    font-size: 3vh;
+    font-size: 2.5vh;
 }
 
 .blurb {
-    font-size: 4vh;
+    font-size: 3vh;
 }
 
 .article-text {
-    font-size: 3vh;
+    font-size: 2.5vh;
 }

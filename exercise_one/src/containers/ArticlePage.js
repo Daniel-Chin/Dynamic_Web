@@ -5,6 +5,7 @@ import formatTime from '../helpers/formatTime';
 const ArticlePage = (props) => {
   const { title, blurb, articleText, image, publishedDate } = props
     .ARTICLES[props.i];
+  console.log(`Don't know how to display`, image);
   return (<>
     <div className='head'>
     {/*<img src={image.url} alt={image.alt} />*/}
@@ -15,9 +16,9 @@ const ArticlePage = (props) => {
       </div>
     </div>
     <div className='waterfall-60 article-text'>
-      {articleText.map(({type, data}) => {
+      {articleText.map(({type, data}, i) => {
         const DynamicTag = type;
-        return <DynamicTag>{data}</DynamicTag>;
+        return <DynamicTag key={i}>{data}</DynamicTag>;
       })}
     </div>
   </>);
