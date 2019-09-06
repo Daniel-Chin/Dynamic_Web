@@ -1,9 +1,10 @@
-.waterfall {
+.waterfall-60 {
     max-width: 60%;
 }
 
 .head {
     background-color: #ccc;
+    padding: 5vh 0;
 }
 
 .head > img {
@@ -15,7 +16,7 @@
 .head > .waterfall {
 }
 
-h1 {
+.article-page-h1 {
     font-size: 7vh;
     font-weight: bold;
     margin-top: 0;
@@ -28,4 +29,8 @@ h1 {
 
 .blurb {
     font-size: 4vh;
+}
+
+.article-text {
+    font-size: 3vh;
 }
