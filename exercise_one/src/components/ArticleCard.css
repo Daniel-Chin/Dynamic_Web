@@ -1,22 +1,35 @@
 .card {
-    display: table;
+    position: relative;
     width: 100%;
     border: solid #bbb 1px;
     margin: 10vh 0;
 }
 
 .card-left {
-    display: table-cell;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 20%;
+    height: 100%;
 }
 
 .card-left > img {
-    max-width: 100%;
+    max-width: calc(100% - 4vh * 2);
     max-height: 100%;
+    margin: 3vh 4vh;
+    vertical-align: middle;
+}
+
+.card-left > .align-helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
 }
 
 .card-right {
-    display: table-cell;
+    position: relative;
+    top: 0;
+    left: 20%;
     width: 80%;
 }
 

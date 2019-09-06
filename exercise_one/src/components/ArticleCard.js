@@ -6,6 +6,7 @@ import formatTime from '../helpers/formatTime';
 const ArticleCard = (props) => (
   <div className='card'>
     <div className='card-left'>
+      <span className='align-helper' />
       <img 
         src={props.article.image.url} 
         alt={props.article.image.alt} 
