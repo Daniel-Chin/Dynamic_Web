@@ -12,10 +12,11 @@ const ArticlePage = (props) => {
     );
   }
   const { title, blurb, articleText, image, publishedDate } = article;
-  console.log(`Don't know how to display`, image);
   return (<>
-    <div className='head'>
-    {/*<img src={image.url} alt={image.alt} />*/}
+    <div className='head' style={{
+      backgroundImage: `url("${image.url}")`, 
+      backgroundSize: 'contain', 
+    }}>
       <div className='waterfall-60'>
         <h1 className='article-page-h1'>{title}</h1>
         <span className='time'>{formatTime(publishedDate)}</span> <br />
