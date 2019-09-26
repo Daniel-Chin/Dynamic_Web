@@ -8,8 +8,8 @@ const URL = (city) => (
 async function getWeather(city) {
   try {
     const response = await axios.get(URL(city));
-    console.log(response);
-    return true;
+    const { main, weather, wind } = response.data;
+    return { main, weather, wind };
   } catch (error) {
     console.log(error);
     return false;
