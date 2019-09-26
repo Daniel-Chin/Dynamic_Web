@@ -1,5 +1,5 @@
 import axios from 'axios';
-import api_key from '../secrets/api_key';
+import api_key from '../secrets/apikey';
 
 const URL = (city) => (
   `https://api.openweathermap.org/data/2.5/weather?q=${encodeURI(city)}&APPID=${api_key}`
