@@ -3,17 +3,24 @@ import { Switch, Route } from 'react-router-dom';
 import getWeather from './helpers/weather_api';
 
 function App() {
-  useEffect(() => {getWeather('New York').then(console.log);}, []);
+  const [result, setResult] = useState({a: 1});
+  useEffect(() => {
+    getWeather('New York').then((result) => {
+      setResult(result);
+    });
+  }, [setResult]);
   return (
     <Switch>
-      <Route exact path='/' render={Temp} />
+      <Route exact path='/' render={() => (
+        <Temp result={result} />
+      )}/>
     </Switch>
   );
 };
 
-const Temp = () => (
+const Temp = ({ result }) => (
   <div>
-    Hi
+    {JSON.stringify(result)}
   </div>
 );
 
