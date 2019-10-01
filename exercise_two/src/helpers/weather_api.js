@@ -6,14 +6,9 @@ const URL = (city) => (
 );
 
 async function getWeather(city) {
-  try {
-    const response = await axios.get(URL(city));
-    const { main, weather, wind } = response.data;
-    return { main, weather, wind };
-  } catch (error) {
-    console.log(error);
-    return false;
-  }
+  const response = await axios.get(URL(city));
+  const { main, weather, wind } = response.data;
+  return { main, weather, wind };
 }
 
 export default getWeather;

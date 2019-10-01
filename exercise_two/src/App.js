@@ -1,27 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import getWeather from './helpers/weather_api';
+import City from './containers/city';
+import './_App.css';
 
 function App() {
-  const [result, setResult] = useState({a: 1});
-  useEffect(() => {
-    getWeather('New York').then((result) => {
-      setResult(result);
-    });
-  }, [setResult]);
   return (
     <Switch>
-      <Route exact path='/' render={() => (
-        <Temp result={result} />
+      <Route exact path='/city' render={(props) => (
+        <City location={props.location} />
       )}/>
     </Switch>
   );
 };
-
-const Temp = ({ result }) => (
-  <div>
-    {JSON.stringify(result)}
-  </div>
-);
 
 export default App;
