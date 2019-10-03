@@ -1,9 +1,13 @@
 import React from 'react';
+import WeatherIcon from './weatherIcon';
+import TemperatureDisplay from './temperatureDisplay';
+import './weatherCard.css';
 
 const WeatherCard = ({ city, no_info, info }) => {
   if (no_info) {
     return (
       <div>
+        <br />
         Too bad. I cannot find any weather info for "{city}". 
       </div>
     );
@@ -11,18 +15,36 @@ const WeatherCard = ({ city, no_info, info }) => {
   if (! info) {
     return (
       <div>
+        <br />
         Looking up weather for "{city}"...
       </div>
     );
   }
-  console.log(info);
-  const { humidity, pressure, temp, temp_min, temp_max } = info.main;
-  const { weather, wind } = info;
+  const { humidity, temp, temp_min, temp_max } = info.main;
+  const wind_speed = info.wind.speed;
+  const weather = info.weather[0].main;
+  const weather_description = info.weather[0].description;
+  const cloudiness = info.clouds.all;
   return (
-    <div>
+    <div className='weatherCard'>
       <h1>{city}</h1>
-      temp: {temp} <br />
-      humidity: {humidity}
+      <WeatherIcon weather={weather}/> <br />
+      "{weather_description}..." <br />
+      <TemperatureDisplay { ...{temp, temp_min, temp_max} } />
+      <table><tbody>
+        <tr>
+          <td className='rightAlign'>Cloudiness</td>
+          <td>{cloudiness}%</td>
+        </tr>
+        <tr>
+          <td className='rightAlign'>Humidity</td>
+          <td>{humidity}%</td>
+        </tr>
+        <tr>
+          <td className='rightAlign'>Wind</td>
+          <td>{wind_speed} m/s</td>
+        </tr>
+      </tbody></table>
     </div>
   );
 };

@@ -7,8 +7,8 @@ const URL = (city) => (
 
 async function getWeather(city) {
   const response = await axios.get(URL(city));
-  const { main, weather, wind } = response.data;
-  return { main, weather, wind };
+  const { main, weather, wind, clouds } = response.data;
+  return { main, weather, wind, clouds };
 }
 
 export default getWeather;

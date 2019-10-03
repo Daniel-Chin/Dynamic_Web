@@ -4,25 +4,61 @@
     align-content: center;
     justify-content: flex-end;
     width: 100%;
-    max-width: 1000px;
-    background-color: #444;
+    box-shadow: 0px -20px 20px 20px black;
     padding: 20px 0;
+    background-color: white;
 }
 
-button {
-  background-color: #09f;
-  font-size: 20px;
-  padding: 1px 10px;
-  margin-right: 20px;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: 0.3s;
-  border: solid 6px;
-  border-color: rgba(0, 0, 0, 0);
-} button:hover {
-  background-color: #0bf;
-  transform: scale(1.1);
-} button:active {
-  background-color: white;
-  transform: scale(0.9);
+.cityButton {
+    background-color: #09f;
+    font-size: 20px;
+    padding: 1px 10px;
+    margin-right: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    border: solid 6px;
+    border-color: rgba(0, 0, 0, 0);
+    color: black;
+    text-decoration: none;
+    user-select: none;
+} .cityButton:hover {
+    background-color: #0bf;
+    transform: scale(1.1);
+    box-shadow: 0px 3px 10px -3px black;
+} .cityButton:active {
+    background-color: white;
+    transform: scale(0.9);
+    box-shadow: none;
+}
+
+.citySpan {
+    background-color: #07d;
+    font-size: 20px;
+    padding: 1px 10px;
+    margin-right: 20px;
+    border: solid 6px;
+    border-color: rgba(0, 0, 0, 0);
+    color: white;
+}
+
+@media only screen and (max-width: 720px) {
+    h1 {
+        font-size: 35px;
+    }
+    
+    .cityChooserFlex {
+        flex-direction: column;
+    }
+
+    .cityButton {
+        margin: 10px 80px;
+        text-align: center;
+        background-color: #0bf;
+    }
+    
+    .citySpan {
+        margin: 10px 80px;
+        text-align: center;
+    }
 }

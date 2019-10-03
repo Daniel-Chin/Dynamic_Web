@@ -1,14 +1,19 @@
 import React from 'react';
 
 const CityChooserButton = ({ city, current_city }) => {
-  // Issue: pressing TAB circulate between <a> and <button>
-  return (
-    <a href={`/city?name=${city}`}>
-      <button>
+  if (city === current_city) {
+    return (
+      <span className='citySpan'>
         {city}
-      </button>
-    </a>
-  );
+      </span>
+    );
+  } else {
+    return (
+      <a href={`/?name=${city}`} className='cityButton'>
+        {city}
+      </a>
+    );
+  }
 };
 
 export default CityChooserButton;
