@@ -1,6 +1,6 @@
 # Urban Voicinary
-Uses the unofficial API of [Urban Dictionary](https://urbandictionary.com) provided by [RapidApi](https://rapidapi.com/).  
-Uses [Voice RSS TextToSpeech](http://www.voicerss.org/api/demo.aspx) API.  
+The app uses the unofficial API of [Urban Dictionary](https://urbandictionary.com) provided by [RapidApi](https://rapidapi.com/).  
+The app also uses [Voice RSS TextToSpeech](http://www.voicerss.org/api/demo.aspx) API.  
 
 ## Warning
 The app may show rude content, as provided by Urban Dictionary.  
