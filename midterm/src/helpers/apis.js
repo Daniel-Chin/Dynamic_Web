@@ -3,9 +3,9 @@ import { TTS_KEY, URBAN_KEY } from './keys';
 
 const MAX_TRY = 6;
 
-async function getTTS(phrase) {
-  return `https://api.voicerss.org?key=${TTS_KEY}&hl=en-us&src=${phrase}`;
-}
+const getTTS = (phrase) => (
+  `https://api.voicerss.org?key=${TTS_KEY}&hl=en-us&src=${phrase}`
+);
 
 async function getUrban(term, fails) {
   fails = fails || 0;
@@ -20,14 +20,18 @@ async function getUrban(term, fails) {
         'x-rapidapi-key': URBAN_KEY, 
       },
     });
-    return response.data.list[0]; // { definition, example }
+    const results = response.data.list;
+    return results[Math.floor(Math.random() * results.length)]; 
+    // { definition, example }
   } catch (err) {
     console.log(err);
     if (fails < MAX_TRY) {
       console.log(`Trying again, ${fails} / ${MAX_TRY}...`)
       return await getUrban(term, fails + 1);
+    } else {
+      console.error('Urban Dict api does not respond.');
     }
   }
-}
+};
 
 export { getTTS, getUrban };
