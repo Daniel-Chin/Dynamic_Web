@@ -34,6 +34,8 @@ const SearchCard = ({ setWord, is_typing, setIs_typing }) => {
     if (event.keyCode === 13) {
       event.preventDefault();
       onSearch(event.target);
+    } else if (event.keyCode === 27) {
+      event.target.blur();
     }
   };
   const canSearch = () => {
