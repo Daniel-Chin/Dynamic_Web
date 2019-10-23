@@ -45,7 +45,7 @@
   outline: none;
 }
 
-.searchButton {
+button {
   color: black;
   background-color: #10dfff;
   font-size: 30px;
@@ -58,7 +58,7 @@
   border-color: rgba(0, 0, 0, 0);
   text-decoration: none;
   user-select: none;
-} .searchButton:hover {
+} button:hover {
   background-color: #2ff;
   transform: scale(1.1);
   box-shadow: 0px 3px 10px -3px black;
@@ -112,4 +112,28 @@ p {
   background-color: #09f;
 } .Link:focus {
   background-color: #09f;
+}
+
+.modalTitleBar {
+  text-align: center;
+  padding: 10px;
+  font-size: 150%;
+}
+
+.modalBody {
+  padding: 30px;
+}
+
+.modalBody > .buttonDiv {
+  width: 100%;
+  text-align: center;
+}
+
+.modalButton {
+  padding: 0 40px;
+} .modalButton:active {
+  background-color: black;
+  color: white;
+  box-shadow: none;
+  transform: scale(.9);
 }
