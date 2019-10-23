@@ -9,8 +9,9 @@ const getTTS = (phrase) => (
 
 async function getUrban(term, fails) {
   fails = fails || 0;
+  let response = null;
   try {
-    const response = await axios.get(`https://mashape-community-urban-dictionary.p.rapidapi.com/define`, {
+    response = await axios.get(`https://mashape-community-urban-dictionary.p.rapidapi.com/define`, {
       params: {
         term, 
       }, 
@@ -19,18 +20,31 @@ async function getUrban(term, fails) {
         'x-rapidapi-host': "mashape-community-urban-dictionary.p.rapidapi.com", 
         'x-rapidapi-key': URBAN_KEY, 
       },
+      validateStatus: (status) => (
+        (status >= 200 && status < 300) || status === 429
+      ),    
     });
-    const results = response.data.list;
-    return results[Math.floor(Math.random() * results.length)]; 
-    // { definition, example }
+    console.log(response);
   } catch (err) {
     console.log(err);
+    response = null;
     if (fails < MAX_TRY) {
       console.log(`Trying again, ${fails} / ${MAX_TRY}...`)
       return await getUrban(term, fails + 1);
     } else {
-      console.error('Urban Dict api does not respond.');
+      throw Error('Urban Dict api refused.');
     }
+  }
+  if (response !== null) {
+    if (response.status === 429) {
+      throw Error('Urban Dict API: ' + response.data);
+    }
+    const results = response.data.list;
+    if (results.length > 0) {
+      return results[Math.floor(Math.random() * results.length)]; 
+      // { definition, example }
+    }
+    throw Error('No such word.');
   }
 };
 
