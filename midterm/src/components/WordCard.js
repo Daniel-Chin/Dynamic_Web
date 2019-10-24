@@ -49,6 +49,7 @@ const WordCard = ({ word, setWord }) => {
   if (urbanResult.err !== null) {
     return (
       <div>
+        Result of "{word}": <br />
         {urbanResult.err.toString()}
       </div>
     );

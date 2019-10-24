@@ -37,7 +37,7 @@ async function getUrban(term, fails) {
   }
   if (response !== null) {
     if (response.status === 429) {
-      throw Error('Urban Dict API: ' + response.data);
+      throw Error('Urban Dict API: ' + JSON.stringify(response.data));
     }
     const results = response.data.list;
     if (results.length > 0) {
