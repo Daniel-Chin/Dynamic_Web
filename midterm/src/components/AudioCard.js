@@ -1,5 +1,6 @@
 import React, { createRef } from 'react';
 import { getTTS } from '../helpers/apis';
+import { AudioPlayer1, AudioPlayer2 } from './AudioPlayers';
 import { useMediaQuery } from 'react-responsive';
 
 const AudioCard = ({ urbanResult }) => {
@@ -7,10 +8,6 @@ const AudioCard = ({ urbanResult }) => {
   const url_1 = getTTS(`${word}. ${definition}`);
   const url_2 = getTTS('For example. ' + example);
   const audio_2_ref = createRef();
-  const audio_2 = <audio controls src={url_2} ref={audio_2_ref} />;
-  const audio_1 = <audio controls autoPlay onEnded={() => {
-    audio_2_ref.current.play();
-  }} src={url_1} />;
   const is_wide = useMediaQuery({
     query: '(min-width: 700px)'
   })
@@ -21,10 +18,10 @@ const AudioCard = ({ urbanResult }) => {
         <tbody>
           <tr>
             <td>
-              {audio_1}
+              <AudioPlayer1 url={url_1} nextRef={audio_2_ref} />
             </td>
             <td>
-              {audio_2}
+              <AudioPlayer2 url={url_2} _ref={audio_2_ref} />
             </td>
           </tr>
         </tbody>
@@ -33,8 +30,8 @@ const AudioCard = ({ urbanResult }) => {
   } else {
     return (
       <div className="audioContainer">
-        {audio_1}
-        {audio_2}
+        <AudioPlayer1 url={url_1} nextRef={audio_2_ref} />
+        <AudioPlayer2 url={url_2} _ref={audio_2_ref} />
       </div>
     );
   }
