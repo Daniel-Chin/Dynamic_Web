@@ -12,7 +12,10 @@ const WordCard = ({ word, setWord }) => {
   });
   useEffect(() => {
     if (word !== null) {
-      getUrban(word).then(({ definition, example }) => {
+      setUrbanResult({
+        err: null, 
+      });
+    getUrban(word).then(({ definition, example }) => {
         setUrbanResult({
           err: null, 
           word, 
