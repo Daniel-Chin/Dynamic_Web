@@ -11,6 +11,12 @@ const app = express();
 //   res.send(`Hi, world! `);
 // });
 
+let acc = 0;
+app.get('/acc', (_, res) => {
+  acc += 1;
+  res.send(`acc = ${acc}`);
+});
+
 app.use('/static', express.static('./public/'));
 
 app.use('/', indexRoute);
