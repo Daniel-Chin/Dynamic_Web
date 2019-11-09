@@ -4,15 +4,16 @@ const HOST = {
   prod: '/api/', 
   dev: 'http://localhost:4000/api/', 
 };
-let which = new Promise((resolve, _) => {
-  ['prod', 'dev'].forEach((x) => {
-    axios.get(HOST[x] + 'status')
-      .then(() => {
-        resolve(x);
-      })
-      .catch(() => {});
-  });
-});
+// let which = new Promise((resolve, _) => {
+//   ['prod', 'dev'].forEach((x) => {
+//     axios.get(HOST[x] + 'status')
+//       .then(() => {
+//         resolve(x);
+//       })
+//       .catch(() => {});
+//   });
+// });
+const which = 'prod';
 
 const postBlog = async (id, content) => {
   return (
