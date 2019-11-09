@@ -1,3 +1,5 @@
+// to request a single blog from Firestore
+
 const express = require('express');
 const { getBlog } = require('../db');
 

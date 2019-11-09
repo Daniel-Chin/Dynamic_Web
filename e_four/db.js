@@ -1,11 +1,15 @@
+// provides an interface to Firestore
+
 const admin = require('firebase-admin');
 
 const BLOGS = 'blogs';
 
 let serviceAccount;
 if (process.env.SERVICE) {
+  // On heroku, it's more secure to store private key as ENV
   serviceAccount = JSON.parse(process.env.SERVICE);
 } else {
+  // On local, we will just use file. 
   serviceAccount = require('./secret').secret;
 }
 console.log('initializeApp...');

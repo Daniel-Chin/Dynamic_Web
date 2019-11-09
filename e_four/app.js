@@ -1,9 +1,13 @@
 'use strict';
+/*
+The app has frontend and backend. 
+The backend is at /api/*. 
+The frontend is at /ui/*, a React static build.
+*/
 
 const express = require('express');
 const apiRoute = require('./routes/api');
 const bodyParser = require('body-parser');
-const cors = require('cors');
 
 const PORT = process.env.PORT || 4000;
 
@@ -14,6 +18,7 @@ if (process.env.PROD) {
   console.log('Production Environment!')
 } else {
   console.log('Dev Environment! Using CORS!')
+  const cors = require('cors');
   app.use(cors());
 }
 
@@ -29,5 +34,3 @@ app.get('/', (_, res) => {
 app.listen(PORT, () => {
   console.log(`Listening @ port ${PORT}...`);
 });
-
-// setInterval(()=>{console.log(`running... ${new Date()}`)}, 2000);
