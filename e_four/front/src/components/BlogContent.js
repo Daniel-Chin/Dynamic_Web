@@ -8,7 +8,7 @@ const BlogContent = ({ blog, preview }) => {
     whiteSpace: 'nowrap', 
     overflow: 'hidden', 
     textOverflow: 'ellipsis',
-  };
+  };  // to show text preview as "text too long for the window..."
 
   return (
     <div className='BlogContent'>

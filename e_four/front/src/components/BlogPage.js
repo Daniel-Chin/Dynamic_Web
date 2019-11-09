@@ -22,7 +22,7 @@ const BlogPage = () => {
     <div className='BlogPage'>
       <Link to='/blogs' className='Link'>
         <div className='topButton button'>
-            Back
+          Back
         </div>
       </Link>
       <Link to={`/edit/${blog_id}`} className='Link'>
