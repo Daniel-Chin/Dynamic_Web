@@ -1,10 +1,14 @@
 import React from 'react';
+import { Switch, Route } from 'react-router-dom';
+import LoginForm from './components/LoginForm'
 
 const App = () => {
   return (
-    <div>
-
-    </div>
+    <Switch>
+      <Route exact path='/login'>
+        <LoginForm />
+      </Route>
+    </Switch>
   );
 };
 
