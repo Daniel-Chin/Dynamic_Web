@@ -1,12 +1,12 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import LoginForm from './components/LoginForm'
+import LoginPage from './pages/LoginPage';
 
 const App = () => {
   return (
     <Switch>
       <Route exact path='/login'>
-        <LoginForm />
+        <LoginPage />
       </Route>
     </Switch>
   );

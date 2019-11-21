@@ -1,6 +1,6 @@
 import React from 'react';
 
-const LoginForm = () => {
+const LoginForm = ({ submit }) => {
   return (
     <form>
       <label for='loginEmail'>Email</label>
