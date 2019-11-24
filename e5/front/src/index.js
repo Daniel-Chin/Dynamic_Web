@@ -4,11 +4,17 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter } from 'react-router-dom';
+import Fb from './helpers/Fb';
+import FbContext from './helpers/FbContext';
 
 ReactDOM.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>, 
+  (
+    <FbContext.Provider value={new Fb()}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </FbContext.Provider>
+  ),
   document.getElementById('root')
 );
 
