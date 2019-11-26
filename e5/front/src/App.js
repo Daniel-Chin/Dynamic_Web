@@ -24,6 +24,7 @@ const App = () => {
         </Route>
         <Route>
           <Redirect to='/profile' />
+          Redirecting...
         </Route>
       </Switch>
     </div>
