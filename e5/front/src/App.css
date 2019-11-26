@@ -2,3 +2,24 @@ body {
   background-color: black;
   color: yellow;
 }
+
+.Header {
+  border-bottom: 2px solid white;
+}
+
+.Header nav {
+  margin: 0 auto;
+  align-items: center;
+  max-width: 1048px;
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px
+}
+
+.Header nav a {
+  color: white;
+  display: inline-block;
+  text-decoration: none;
+  padding: 5px 15px;
+  line-height: 1;
+}
