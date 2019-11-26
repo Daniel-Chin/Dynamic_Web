@@ -4,13 +4,6 @@ import firebase from 'firebase';
 const { GoogleAuthProvider } = firebase.auth;
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCtK6dbTnQmUEeU8s5OFEKfRxhBS7AC5sw",
-  authDomain: "dyn-web-e5-r73rgg.firebaseapp.com",
-  databaseURL: "https://dyn-web-e5-r73rgg.firebaseio.com",
-  projectId: "dyn-web-e5-r73rgg",
-  storageBucket: "dyn-web-e5-r73rgg.appspot.com",
-  messagingSenderId: "786073252321",
-  appId: "1:786073252321:web:221f66aa72b3a2de71a2a0"
 };
 
 class Fb {

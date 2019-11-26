@@ -3,16 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import Fb from './helpers/Fb';
 import FbContext from './helpers/FbContext';
 
 ReactDOM.render(
   (
     <FbContext.Provider value={new Fb()}>
-      <BrowserRouter>
+      <HashRouter>
         <App />
-      </BrowserRouter>
+      </HashRouter>
     </FbContext.Provider>
   ),
   document.getElementById('root')
