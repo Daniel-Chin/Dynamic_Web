@@ -5,7 +5,7 @@ import RegisterPage from './pages/RegisterPage';
 import PofilePage from './pages/PofilePage';
 import UniHead from './components/UniHead';
 import firebase from 'firebase';
-import { firebaseConfig } from './secret';
+import { firebaseConfig } from './firebaseConfig';
 import './App.css';
 
 const App = () => {
