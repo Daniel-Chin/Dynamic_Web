@@ -1,27 +1,34 @@
 import React from 'react';
-import LoginForm from '../components/LoginForm';
-import FbContext from '../helpers/FbContext';
+import { Redirect } from 'react-router-dom';
+import firebase from 'firebase';
+import CredentialsForm from '../components/CredentialsForm';
 
-const LoginPage = () => {
-  const submit = () => {
+const LoginPage = ({ whoami, set_whoami }) => {
+  if (whoami !== null) {
+    return (
+      <Redirect to='/profile' />
+    );
+  }
 
-  };
-
-  const onGoogle = function () {
-    this.signIn();
+  const login = (event) => {
+    event.preventDefault();
+    const email = event.currentTarget.email.value;
+    const password = event.currentTarget.password.value;
+    firebase
+      .auth()
+      .signInWithEmailAndPassword(email, password)
+      .then((res) => {
+        set_whoami(email);
+      })
+      .catch((e) => {
+        alert(e);
+      });
   };
 
   return (
     <div>
       <h2>Login</h2>
-      <FbContext.Consumer> 
-        {value => (
-          <button onClick={onGoogle.bind(value)}>
-            Log in with Google
-          </button>
-        )} 
-      </FbContext.Consumer>
-      <LoginForm submit={submit} />
+      <CredentialsForm submit={login} verb='Login' />
     </div>
   );
 };

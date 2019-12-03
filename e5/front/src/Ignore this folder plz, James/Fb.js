@@ -1,10 +1,8 @@
 import app from 'firebase/app';
 import firebase from 'firebase';
+import { firebaseConfig } from '../secret';
 
 const { GoogleAuthProvider } = firebase.auth;
-
-const firebaseConfig = {
-};
 
 class Fb {
   constructor() {

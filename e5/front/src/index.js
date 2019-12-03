@@ -4,16 +4,12 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { HashRouter } from 'react-router-dom';
-import Fb from './helpers/Fb';
-import FbContext from './helpers/FbContext';
 
 ReactDOM.render(
   (
-    <FbContext.Provider value={new Fb()}>
-      <HashRouter>
-        <App />
-      </HashRouter>
-    </FbContext.Provider>
+    <HashRouter>
+      <App />
+    </HashRouter>
   ),
   document.getElementById('root')
 );

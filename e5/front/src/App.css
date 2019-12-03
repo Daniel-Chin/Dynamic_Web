@@ -17,9 +17,19 @@ body {
 }
 
 .Header nav a {
-  color: white;
+  color: cyan;
   display: inline-block;
-  text-decoration: none;
   padding: 5px 15px;
   line-height: 1;
+}
+
+.Header nav button {
+  color: cyan;
+  display: inline-block;
+  padding: 5px 15px;
+  background-color: rgba(0,0,0,0);
+  border: none;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 100%;
 }
