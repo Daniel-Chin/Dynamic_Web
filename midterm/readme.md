@@ -2,6 +2,11 @@
 ## Warning
 The app may show rude content, as provided by Urban Dictionary.  
 
+## How to Run
+Run it on your own machine using `npm start`.  
+
+I don't host it on Heroku because the app uses free third-party services and I don't want hackers to use my server to dDos any one.  
+
 ## Two Sources of Data
 The app uses the unofficial API of [Urban Dictionary](https://urbandictionary.com) provided by [RapidApi](https://rapidapi.com/).  
 The app also uses [Voice RSS TextToSpeech](http://www.voicerss.org/api/demo.aspx) API.  
@@ -23,4 +28,4 @@ Besides that, the regular stuff. Text updates, and audio updates.
 ```useEffect``` basically handles everything automatically...  
 
 ## Accessibility
-Full support for tab navigation .  
+Full support for tab navigation.  
