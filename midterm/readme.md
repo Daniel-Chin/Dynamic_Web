@@ -2,10 +2,8 @@
 ## Warning
 The app may show rude content, as provided by Urban Dictionary.  
 
-## How to Run
-Run it on your own machine using `npm start`.  
-
-I don't host it on Heroku because the app uses free third-party services and I don't want hackers to use my server to dDos any one.  
+## Demo
+https://naughty-lalande-3e9746.netlify.app/
 
 ## Two Sources of Data
 The app uses the unofficial API of [Urban Dictionary](https://urbandictionary.com) provided by [RapidApi](https://rapidapi.com/).  
